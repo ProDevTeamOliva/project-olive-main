@@ -1,6 +1,6 @@
 services:
   mongo:
-    build: ./database/mongo
+    build: ./mongo
     ports:
       - ${MONGO_PORT:-27017}:27017
     environment:
@@ -14,7 +14,7 @@ services:
       - mongo-configdb:/data/configdb
   neo4j:
     build:
-      context: ./database/neo4j
+      context: ./neo4j
       args:
         NEO4J_IMAGE: ${NEO4J_IMAGE:-neo4j:4.3.7}
     ports:
