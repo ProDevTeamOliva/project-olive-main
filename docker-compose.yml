@@ -13,9 +13,6 @@ services:
     volumes:
       - mongo-db:/data/db
       - mongo-configdb:/data/configdb
-    profiles:
-      - dev
-      - prod
   neo4j:
     build:
       context: ./neo4j
@@ -38,10 +35,7 @@ services:
       - neo4j-var:/var/lib/neo4j
       - neo4j-plugins:/plugins
       - neo4j-cyphers:/cyphers
-    profiles:
-      - dev
-      - prod
-  backend:
+  backend: &backend
     build: ./project-olive-backend
     restart: always
     depends_on:
@@ -64,6 +58,18 @@ services:
       - ./logs:/opt/chattermatter/logs
     profiles:
       - prod
+  backenddev:
+    <<: *backend
+    command:
+      - /bin/bash
+      - -c
+      - |
+        export NODE_ENV=
+        export PORT=${PORT:-3000}
+        yarn
+        yarn prod
+    profiles:
+      - dev
   frontend:
     build: ./project-olive-frontend
     restart: always
