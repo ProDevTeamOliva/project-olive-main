@@ -67,6 +67,7 @@ services:
         export NODE_ENV=
         export PORT=${PORT:-3000}
         yarn
+        sleep 15
         yarn fill
         yarn prod
     profiles:
