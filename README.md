@@ -40,7 +40,7 @@ NEO4J_PORT_BOLT=
 NEO4J_IMAGE=
 
 ```
-`NGINX_PORT_HTTPS` and `NGINX_PORT_HTTP` could be specified to change app ports from the usual `443`/`80`. Also, it's best to change passwords and session secret :)
+`NGINX_PORT_HTTPS` and `NGINX_PORT_HTTP` could be specified to change app ports from the usual `443`/`80`. Also, it's best to change passwords and session secret. (Neo4j supports only alphanumeric characters).
 
 ---
 Next, generate a self-signed certificate providing server address (e.g., localhost).
