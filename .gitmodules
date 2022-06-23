@@ -1,8 +1,8 @@
 [submodule "project-olive-backend"]
 	path = project-olive-backend
 	url = git@github.com:ProDevTeamOliva/project-olive-backend.git
-	branch = main
+	branch = production
 [submodule "project-olive-frontend"]
 	path = project-olive-frontend
 	url = git@github.com:ProDevTeamOliva/project-olive-frontend.git
-	branch = main
+	branch = production
